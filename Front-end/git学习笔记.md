@@ -110,9 +110,9 @@ Git基本常用命令如下：
 - git reflog       查看历史记录的版本号id
 - git checkout — XX  把XX文件在工作区的修改全部撤销。
 - git rm XX          删除XX文件
-- git remote add origin https://github.com/tugenhua0707/testgit 关联一个远程库
+- git remote add origin https://github.com/zhaokang555/xxx.git 关联一个远程库
 - git push –u(第一次要用-u 以后不需要) origin master 把当前master分支推送到远程库
-- git clone https://github.com/tugenhua0707/testgit  从远程库中克隆
+- git clone https://github.com/zhaokang555/xxx.git  从远程库中克隆
 - git checkout –b dev  创建dev分支 并切换到dev分支上
 - git branch  查看当前所有的分支
 - git checkout master 切换回master分支
