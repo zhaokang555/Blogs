@@ -53,7 +53,16 @@ git reset --hard HEAD~13
 
 #删除文件
 
-$ git rm xxx.xx // 命令git rm用于删除一个文件
+`git rm xxx.xx` 
+
+---
+
+#忽略已经被提交的文件
+
+正确的做法应该是：
+- 首先 `git rm --cached logs/xx.log`
+- 然后更新 .gitignore 忽略掉目标文件
+- 最后 `git commit -m "We really don't want Git to track this anymore!"`
 
 ---
 
@@ -61,7 +70,7 @@ $ git rm xxx.xx // 命令git rm用于删除一个文件
 
 详情见：[廖雪峰的这篇文章](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000)
 
-要关联一个远程库，首先`cd xxx`，然后使用命令`git remote add origin git@github.com:zhaokang555/xxx.git`或者`git remote add origin https://github.com/michaelliao/gitskills.git`
+要关联一个远程库，首先`cd xxx`，然后使用命令`git remote add origin git@github.com:zhaokang555/xxx.git`或者`git remote add origin https://github.com/zhaokang555/xxx.git`
 
 关联后，使用命令`git push -u origin master`第一次推送master分支的所有内容
 
@@ -75,12 +84,12 @@ $ git rm xxx.xx // 命令git rm用于删除一个文件
 
 在~目录下：
 
-`git clone git@github.com:michaelliao/gitskills.git`或者`git clone https://github.com/michaelliao/gitskills.git`
+`git clone git@github.com:zhaokang555/xxx.git`或者`git clone https://github.com/zhaokang555/xxx.git`
 
-要克隆一个仓库，首先必须知道仓库的地址，然后使用`git clone`命令克隆。
+- 要克隆一个仓库，首先必须知道仓库的地址，然后使用`git clone`命令克隆。
 Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快。
 
-GitHub给出的地址不止一个，还可以用`https://github.com/michaelliao/gitskills.git`这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
+- GitHub给出的地址不止一个，不光可以用`git@github.com:zhaokang555/xxx.git`还可以用`https://github.com/zhaokang/xxx.git`这样的地址。实际上，Git支持多种协议，默认的git://使用ssh，但也可以使用https等其他协议。
 
 ---
 
