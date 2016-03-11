@@ -69,3 +69,4 @@ $ git rm xxx.xx // 命令git rm用于删除一个文件
 
 
 
+
