@@ -1,9 +1,21 @@
+#基本流程：
 
 ```
-git init  
+git diff
+git add .
+git status
+git commit -m xxxxxx
+git push origin master
+```
 
-git status  
-git diff  
+---
+
+#创建版本库
+
+```
+mkdir xxx
+cd xxx
+git init  
 ```
 
 ---
@@ -49,7 +61,7 @@ $ git rm xxx.xx // 命令git rm用于删除一个文件
 
 详情见：[廖雪峰的这篇文章](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000)
 
-要关联一个远程库，使用命令`git remote add origin git@github.com:zhaokang555/xxx.git`或者`git remote add origin https://github.com/michaelliao/gitskills.git`
+要关联一个远程库，首先`cd xxx`，然后使用命令`git remote add origin git@github.com:zhaokang555/xxx.git`或者`git remote add origin https://github.com/michaelliao/gitskills.git`
 
 关联后，使用命令`git push -u origin master`第一次推送master分支的所有内容
 
@@ -60,6 +72,8 @@ $ git rm xxx.xx // 命令git rm用于删除一个文件
 ---
 
 #从远程仓库克隆
+
+在~目录下：
 
 `git clone git@github.com:michaelliao/gitskills.git`或者`git clone https://github.com/michaelliao/gitskills.git`
 
