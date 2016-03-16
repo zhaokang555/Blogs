@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面内有一个正方形元素，实现对其拖拽和放下</title>
+    <style>
+        #div1 {
+            background-color: red;
+            width: 200px;
+            height: 200px;
+        }
+
+        #drag1 {
+            background-color: green;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>Drag green box into red box</p>
+    <div id="div1"></div>
+    <div id="drag1" draggable="true"></div>
+
+    <script>
+        var div1 = document.getElementById('div1');
+        var drag1 = document.getElementById('drag1');
+
+        div1.ondragover = function (ev) {
+            var e = ev || window.event;
+            e.preventDefault();
+        };
+
+        div1.ondrop = function (ev) {
+            var e = ev || window.event;
+            var tgt = e.target || e.srcElement;
+            e.preventDefault();
+
+            var data=e.dataTransfer.getData("Text");
+            tgt.appendChild(document.getElementById(data));
+        };
+
+        drag1.ondragstart = function (ev) {
+            var e = ev || window.event;
+            var tgt = e.target || e.srcElement;
+
+            e.dataTransfer.setData("Text", tgt.id);
+        };
+
+    </script>
+</body>
+</html>

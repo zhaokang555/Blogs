@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面内实现右键菜单组件功能</title>
+    <style>
+        #rClickMenu {
+            border: 1px solid black;
+            position: absolute;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <p>Right click anywhere</p>
+    <div id="rClickMenu" style="display:none">这是右键菜单</div>
+
+    <script>
+        var rClickMenu = document.getElementById('rClickMenu');
+
+        document.oncontextmenu = function (ev) {
+            var e = window.event || ev;
+
+            rClickMenu.style.display = "";
+            rClickMenu.style.top = e.clientY + 'px';
+            rClickMenu.style.left = e.clientX + 'px';
+
+            return false; // 禁用浏览器默认右键菜单
+        };
+
+        document.onclick = function () {
+            rClickMenu.style.display = "none";
+        };
+    </script>
+</body>
+</html>
